@@ -1,0 +1,226 @@
+/* Importing Font Familt */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital@1&display=swap');
+
+/* Reset Css or Nomalize Css */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primary: #00bcd4;
+    --color-secondary: #dcdcdc;
+    --color-tertiary: #fafafa;
+
+    /* Transistion */
+    --trasistion2x: all 0.2s ease-in-out;
+    --trasistion3x: all 0.3s ease-in-out;
+    --trasistion4x: all 0.4s ease-in-out;
+    --trasistion5x: all 0.5s ease-in-out;
+
+    /* Transform Scale */
+    --transform-scale1x: scale(1.1);
+
+    /* Font Family */
+    --font-family-primary: 'Courier Prime', monospace;
+}
+
+/* Tags Css */
+
+body {
+    background-image: url('/img/bg-reg.png');
+    background-size: cover;
+    object-fit: fill;
+    background-repeat: no-repeat;
+
+    /* center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--font-family-primary);
+}
+
+/* Typography */
+
+/* Custom Design */
+.container {
+    background: rgba(255, 255, 255, 0.33);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.7px);
+    -webkit-backdrop-filter: blur(8.7px);
+    border: 1px solid rgba(255, 255, 255, 0.52);
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    min-width: 900px;
+}
+
+/* ==============================Logo======================================= */
+.logo_container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo_container img {
+    width: 65px;
+    height: 65px;
+    margin-right: 10px;
+}
+
+.logo_container p {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--color-tertiary);
+}
+
+/* ============================Progress Bar================================= */
+.progress {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 60px;
+    counter-reset: step;
+
+}
+
+.progress::before,
+.progress-bar {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 85%;
+    background-color: var(--color-secondary);
+    transition: all 0.5s ease-in-out;
+}
+
+.progress-bar {
+
+    background-color: var(--color-primary);
+    width: 0%;
+}
+
+.progress-step {
+    width: 25px;
+    height: 25px;
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.progress-step::before {
+    content: counter(step);
+    counter-increment: step;
+}
+
+.progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 1px);
+    transform: translateY(-50%);
+    font-size: 14px;
+}
+
+.progress-active {
+    background-color: var(--color-primary);
+    transition: all 0.8s ease-in-out;
+}
+
+
+/* =============================Form========================================== */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+}
+
+.steps {
+    display: none;
+    transform-origin: top;
+    animation: animate .5s ease-in-out;
+
+}
+
+.steps.active {
+    display: block;
+}
+
+@keyframes animate {
+    from {
+        transform: scale(1, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+.form-steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group>label {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-tertiary);
+    margin-bottom: 5px;
+    margin-left: 3px;
+}
+
+.form-group>input,
+.form-group>select {
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.btn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    grid-column: 1 / span 2;
+    margin-top: 10px;
+}
+
+.btn-prev,
+.btn-sub,
+.btn-nxt {
+    padding: 10px 25px;
+    border-radius: 13px;
+    margin-right: 10px;
+    background-color: var(--color-primary);
+    font-weight: 600;
+    border: none;
+    transition: var(--trasistion2x);
+}
+
+.btn-prev:hover,
+.btn-sub:hover,
+.btn-nxt:hover {
+    transform: var(--transform-scale1x);
+}
+
+button:last-child {
+    margin-right: 0;
+}

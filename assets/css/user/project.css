@@ -1,0 +1,766 @@
+/* Import */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
+/* reset Css */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Css Variable */
+:root {
+    --color-primary: #;
+    --color-secondary: #;
+    --color-tertiary: #f9f9f9;
+
+    /* Sidebar */
+    --sidebar: cornflowerblue;
+    --sidebar-text: #;
+    --sidebar-background: #;
+    /* header */
+    --header: #F3F3F3;
+    --header-text: #;
+    --header-background: #;
+    /* content */
+    --content: #;
+    --content-text: #;
+    --content-background: #;
+    --courier: 'Courier Prime', monospace;
+}
+
+/* Typography */
+
+/* HTML ELEMENT */
+
+
+body{
+    font-family: var(--courier);
+    color: black;
+    
+}
+
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+/* Custom design */
+.dashboard{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    min-height: 100vh;
+    
+}
+/* ==========================================Sidebar=========================== */
+.sidebar{
+    background: var(--sidebar);
+    width: 350px;
+}
+.side-item{
+    margin:0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+.side-item-list{
+    margin: 0;
+    padding: 0;
+}
+/* =================================img======================================== */
+.side-item-link{
+    display : flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+.side-item-link img{
+    width: 75px;
+    height: 75px;
+    margin-right: 10px;
+}
+.side-item-link .project-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.side-item-link .project-name .role{
+    font-size: 15px;
+}
+/* =========================================img=========================== */
+
+.item{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+.item-list{
+    padding: 20px 0;
+    margin: 10px 0;
+    border-radius: 16px;
+}
+.item-list:first-child{
+    margin-top: 0;
+}
+.item-list:last-child{
+    margin-bottom: 0;
+}
+
+.item-list a{
+    display: flex;
+    align-items: center;
+    padding: 0 20px ;
+    font-size: 20px;
+}
+.item-list a i{
+    margin-right: 10px;
+    font-size: 30px;
+}
+
+.side-item-list:last-child{
+    margin-top: auto;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* ======================================End Sidebar=========================== */
+.main{
+    /* background: blue; */
+}
+.container{
+    display: flex;
+    flex-direction: column;
+
+}
+/* ==========================================Nav=========================== */
+.nav{
+    background-color: var(--header);
+    padding: 10px 40px;
+}
+.nav-item{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.nav-item-list{
+    margin: 0 10px;
+
+}
+.nav-item-list:first-child a{
+    position: relative;
+}
+.nav-item-list:last-child{
+    margin-left: 0;
+    order: -1;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+
+}
+
+
+/* ==========================================profile=========================== */
+.profile-btn{
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 10px 25px;
+    margin:  0 10px ;
+    border-radius: 50px;
+    background: transparent;
+    cursor: pointer;
+
+
+}
+.profile-btn img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+        
+.profile-btn .name{
+    font-size: 15px;
+}
+
+.profile-dropdown{
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    transform: translateX(-190%) translateY(80%);
+    background: rgba(100, 149, 237, 0.22);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.4px);
+    -webkit-backdrop-filter: blur(2.4px);
+    padding: 15px;
+    border-radius: 10px;
+    z-index: 2;
+}
+.name-contaiter{
+    font-size: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 0;
+}
+.name-contaiter *{
+    margin: 3px 0;
+}
+.profile-item{
+    margin: 5px 0;
+}
+.logout{
+    margin-bottom: 0;
+}
+
+/* ======================================profile=========================== */
+
+/* ======================================notif=========================== */
+.notif-btn{
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 10px 25px;
+    margin:  0 10px ;
+    border-radius: 50px;
+    background: transparent;
+    font-size: 25px;
+    position: relative;
+    cursor: pointer;
+}
+.notif-count{
+    position: absolute;
+    top: 5px;
+    left: 35px;
+    font-size: 10px;
+    background: red;
+    padding: 3px 5px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notif-dropdwon{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(135%) translateY(35%);
+    background: rgba(100, 149, 237, 0.22);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.4px);
+    -webkit-backdrop-filter: blur(2.4px);
+    padding: 15px;
+    border-radius: 10px;
+    overflow-y: scroll;
+    width: 400px;
+    height: 300px;
+    z-index: 1;
+}
+.notif-dropdwon::-webkit-scrollbar{
+    width: 0;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+    font-size: 13px;
+}
+.notif-item-list{
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+.notif-item-list:last-child{
+    margin-bottom: 0;
+}
+.notif-item-list img{
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.notif-item-list .name{
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 10px;
+    
+}
+.notif-item-list .name .detail{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.show{
+    display: block;
+}
+/* ======================================notif=========================== */
+
+.time-item{
+    display: flex;
+    align-items: center;
+}
+.time-item-list a i{
+    font-size: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 20px;
+}
+.dateTime{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: black;
+    margin-right: auto;
+    padding: 10px 20px;
+}
+.dateTime .date{
+    margin-right: 10px;
+}
+/* ======================================End Nav=========================== */
+
+/* ==========================================Content=========================== */
+
+
+.content{
+    background-color:whitesmoke;
+    grid-area: content;
+    min-height: 90vh;
+}
+.heading{
+    font-size: 22px;
+    font-family: var(--courier);
+    margin-top: 18px;
+    margin-left: 30px;
+    font-weight: 400;
+    color: #4e73df;
+}
+.back{
+    margin-top:25px;
+    margin-left:0px;
+    size-adjust: 5%;
+    
+}
+.line {
+    height: 5px;
+    background: linear-gradient(
+      to bottom,
+      transparent 1px);
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 15px;
+  }
+ 
+.project{
+    grid-area: project;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50%;
+    height: 100%;
+    float: left;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+}
+.line-1{
+    font-size: 16px;
+    color: rgb(119, 118, 118);
+    font-weight:bolder;
+    font-family: var(--courier);
+    text-decoration: underline;
+    text-decoration-color: cornflowerblue;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+.line-2{
+    font-size: 1rem;
+    color: #858796;
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: var(--courier);
+    margin-top: 0px;
+    margin-left: 25px;
+}
+.line-3{
+    font-size: 16px;
+    color: rgb(119, 118, 118);
+    font-weight:bolder;
+    font-family: var(--courier);
+    text-decoration: underline;
+    text-decoration-color: cornflowerblue;
+    margin-top: 15px;
+    margin-left: 25px;
+}
+.line-4{
+    font-size: 1rem;
+    color: #858796;
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: var(--courier);
+    margin-top: 0px;
+    margin-left: 25px;
+}
+.line-5{
+    font-size: 16px;
+    color: rgb(119, 118, 118);
+    font-weight:bolder;
+    font-family: var(--courier);
+    text-decoration: underline;
+    text-decoration-color: cornflowerblue;
+    margin-top: 50px;
+    margin-left: 25px;
+}
+.line-6{
+    font-size: 1rem;
+    color: #858796;
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: var(--courier);
+    margin-top: 0px;
+    margin-left: 25px;
+}
+.line-7{
+    font-size: 16px;
+    color: rgb(119, 118, 118);
+    font-weight:bolder;
+    font-family: var(--courier);
+    text-decoration: underline;
+    text-decoration-color: cornflowerblue;
+    margin-top: 15px;
+    margin-left: 25px;
+}
+.line-8{
+    font-size: 1rem;
+    color: #858796;
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: var(--courier);
+    margin-top: 0px;
+    margin-left: 25px;
+}
+.line-9{
+    font-size: 16px;
+    color: rgb(119, 118, 118);
+    font-weight:bolder;
+    font-family: var(--courier);
+    text-decoration: underline;
+    text-decoration-color: cornflowerblue;
+    margin-top: 15px;
+    margin-left: 25px;
+}
+.line-10{
+    font-size: 1rem;
+    color: #858796;
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: var(--courier);
+    margin-top: 0px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+.task{
+    grid-area: project;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 40%;
+    height: 100%;
+    float: right;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.task-1{
+    font-size: 16px;
+    color: rgb(119, 118, 118);
+    font-weight:bolder;
+    font-family: var(--courier);
+    text-decoration: underline;
+    text-decoration-color: cornflowerblue;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+}
+.btn-outline-primary {
+    border-color: cornflowerblue;
+    font-weight: 400;
+    color: cornflowerblue;
+    text-align: right;
+    margin-left: 70%;
+    vertical-align: middle;
+    background-color: transparent;
+    padding: 2.5px;
+    font-size: 1rem;
+    line-height: 1.0;
+    border-radius: 0.35rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn-outline-primary:hover{background: rgb(207, 218, 241);}
+.sample-1{
+    background-color: none;
+    border-color: cornflowerblue;
+    max-height: 65vh;
+    position: relative;
+}
+.sample-1 ul li{
+    list-style: none;
+    padding: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: var(--courier);
+    text-align: center;
+}   
+.sample-1 ul li{
+    border: 1px solid cornflowerblue;
+}
+.sample-1 ul li:hover{background:rgb(207, 218, 241); text-decoration: underline;}
+.sample-2{
+    background-color: none;
+    border-color: cornflowerblue;
+    max-height: 65vh;
+    position: relative;
+}
+.sample-2 ul li{
+    list-style: none;
+    padding: 15px;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-family: var(--courier);
+    text-align: center;
+}   
+.sample-2 ul li{
+    border: 1px solid cornflowerblue;
+    margin-top: 0%;
+    margin-bottom: 25px;
+}
+.sample-2 ul li:hover{background:rgb(207, 218, 241); text-decoration: underline;}
+
+
+/* ======================================End Content=========================== */
+
+
+/* ======================================Modal=========================== */
+
+.modal-content{
+    grid-area: modal-content;
+    width: 50%;
+    height: 85%;
+    justify-content: center;
+    align-items: center;
+    display:none; 
+    position: absolute;
+    overflow:auto;
+    z-index: 1;
+    left: 30;
+    top: 35px;
+    background-color: whitesmoke;
+    border-color: black;
+    border-radius: 2px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    pointer-events: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.modal-header{
+    display: flex;
+    justify-content:left;
+    color: rgb(119, 118, 118);
+    font-family: var(--courier);
+    align-items: center;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+.close {
+    border-color: whitesmoke;
+    font-weight: 400;
+    color: whitesmoke;
+    text-align: right;
+    margin-left: 90%;
+    margin-top: -8%;
+    vertical-align: middle;
+    background-color: transparent;
+    font-size: 1rem;
+    border-radius: 0.35rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+.line-modal {
+    height: 5px;
+    background: linear-gradient(
+      to bottom,
+      transparent 1px);
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-top: 20px;
+  }
+
+.add-task-details .add-task {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    font-size: 16px;
+    margin-top: 15px;
+}
+.name{
+    font-size: 15px;
+    color: rgb(119, 118, 118);
+    font-family: var(--courier);
+}
+
+.feedback-input {
+    color: rgb(119, 118, 118);
+    font-family: var(--courier);
+    font-weight:100;
+    font-size: 15px;
+    border-radius: 5px;
+    line-height: 15px;
+    background-color: lightgray;
+    border:1px solid darkgray;
+    transition: all 0.3s;
+    padding: 5px;
+    margin-bottom: 30px;
+    width:40%;
+    box-sizing: border-box;
+    outline:0;
+  }
+  .feedback-input:focus { border:1px solid lightgray; }
+  .input {
+    color: rgb(119, 118, 118);
+    font-family: var(--courier);
+    font-weight:100;
+    font-size: 15px;
+    border-radius: 5px;
+    line-height: 15px;
+    background-color: white;
+    border:1px solid darkgray;
+    transition: all 0.3s;
+    padding: 5px;
+    margin-bottom: 30px;
+    width:38%;
+    box-sizing: border-box;
+    outline:0;
+  }
+  .input:focus { border:1px solid lightgray; }
+  .input-member {
+    color: rgb(119, 118, 118);
+    font-family: var(--courier);
+    font-weight:100;
+    font-size: 15px;
+    border-radius: 5px;
+    line-height: 15px;
+    background-color: white;
+    transition: all 0.3s;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    width: 95%;
+    box-sizing: border-box;
+    outline:0;
+  }
+  .input-member:focus { border:1px solid lightgray; }
+  .textarea {
+    height: 150px;
+    line-height: 150%;
+    resize:vertical;
+  }
+  .line-task {
+    height: 5px;
+    background: linear-gradient(
+      to bottom,
+      transparent 1px);
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 15px;
+  }
+  .text-description{
+    margin-top: 20px;
+  }
+  .text-area{
+    margin-top: 10px;
+  }
+  .description {
+    color: rgb(119, 118, 118);
+    font-family: var(--courier);
+    font-weight:100;
+    font-size: 15px;
+    border-radius: 5px;
+    line-height: 15px;
+    background-color: white;
+    transition: all 0.3s;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    width:95%;
+    height: 50%;
+    box-sizing: border-box;
+    outline:0;
+  }
+  .description:focus { border:1px solid lightgray; }
+.cancelbtn {
+    border-color: #aaa;
+    font-family: var(--courier);
+    font-weight: 400;
+    color: #aaa;
+    margin-left: 73%;
+    vertical-align: middle;
+    background-color: transparent;
+    padding: 7px;
+    font-size: 1rem;
+    line-height: 1.0;
+    border-radius: 0.35rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.cancelbtn:hover,
+.cancelbtn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.addbtn {
+    border-color: cornflowerblue;
+    font-weight: 400;
+    font-family: var(--courier);
+    color: white;
+    background-color: cornflowerblue;
+    padding: 7px;
+    width: 68px;
+    font-size: 1rem;
+    line-height: 1.0;
+    border-radius: 0.35rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.addbtn:hover,
+.addbtn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+
+/* ======================================Modal=========================== */
